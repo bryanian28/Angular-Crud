@@ -1,0 +1,17 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <!-- Identification for Update -->
+  <input name="id" hidden  #id="ngModel" [(ngModel)]="service.formData.id" class="form-control">
+  <div class="form-group">
+    <label>Title</label>
+    <input name="title" #Title="ngModel" [(ngModel)]="service.formData.title" class="form-control" required>
+    <div class="validation-error" *ngIf="Title.invalid && Title.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <input name="description" #Description="ngModel" [(ngModel)]="service.formData.description" class="form-control" required>
+    <div class="validation-error" *ngIf="Description.invalid && Description.touched">This field is required.</div>
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+</form>
