@@ -25,13 +25,17 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    this.insertRecord(form);
+    this.Login(form);
   }
-  insertRecord(form: NgForm) {
+  Login(form: NgForm) {
     this.service.login(form.value).subscribe(res => {
-      alert('Inserted successfully');
+      alert('successfully Login');
       this.resetForm(form);
-    });
+    },
+    error => {
+      alert('Wrong Username/Password!');
+    }
+    );
   }
 
 }
