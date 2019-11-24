@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Article } from './article.model';
+import { Article } from '../models/article.model';
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
@@ -9,7 +9,7 @@ export class ArticleService {
 
   formData: Article;
   list: Article[];
-  readonly rootURL ="http://localhost:3000/api/v1"
+  readonly rootURL ="http://localhost:3000"
 
   constructor(private http: HttpClient) { }
 

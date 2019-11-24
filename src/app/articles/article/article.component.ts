@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticleService } from 'src/app/shared/articles.service';
+import { ArticleService } from 'src/app/shared/services/articles.service';
 import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-article',
